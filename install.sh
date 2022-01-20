@@ -63,11 +63,24 @@ EOF
 
 fi 
 
-if [ ! -z ${_BUILD_ARG_DAPR} ]; then
+if [ ! -z ${_BUILD_ARG_DAPRINIT} ]; then
     echo "Activating feature 'dapr'"
 
+        tee /usr/daprinit.sh > /dev/null \
+    << EOF
+    #!/bin/bash
     wget -q \
       https://raw.githubusercontent.com/dapr/cli/master/install/install.sh \
-      -O - \
+      -O /usr/dapr.sh \
       | /bin/bash
+    dapr init
+EOF
+
+    chmod +x /usr/daprinit.sh
+    sudo cat '/usr/daprinit.sh' > /usr/local/bin/daprinit
+    sudo chmod +x /usr/local/bin/daprinit
+
+fi 
+
+
 fi

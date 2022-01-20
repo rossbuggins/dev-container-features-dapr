@@ -1,7 +1,7 @@
 {
     "features": [
         {
-            "id": "dapr",
+            "id": "daprinit",
             "name": "Dapr Framework Feature",
             "include": ["ubuntu"]
         },
