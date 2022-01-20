@@ -70,6 +70,4 @@ if [ ! -z ${_BUILD_ARG_DAPR} ]; then
       https://raw.githubusercontent.com/dapr/cli/master/install/install.sh \
       -O - \
       | /bin/bash
-    dapr init
-    docker ps
 fi
