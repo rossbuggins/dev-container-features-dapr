@@ -80,7 +80,4 @@ EOF
     sudo cat '/usr/daprinit.sh' > /usr/local/bin/daprinit
     sudo chmod +x /usr/local/bin/daprinit
 
-fi 
-
-
 fi
