@@ -69,10 +69,7 @@ if [ ! -z ${_BUILD_ARG_DAPRINIT} ]; then
         tee /usr/daprinit.sh > /dev/null \
     << EOF
     #!/bin/bash
-    wget -q \
-      https://raw.githubusercontent.com/dapr/cli/master/install/install.sh \
-      -O /usr/dapr.sh \
-      | /bin/bash
+    wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
     dapr init
 EOF
 
